@@ -1,7 +1,7 @@
 part of 'theme_bloc.dart';
 
 abstract class ThemeState{
-  final bool isLightTheme;
+  bool isLightTheme;
 
   ThemeState(this.isLightTheme);
 }

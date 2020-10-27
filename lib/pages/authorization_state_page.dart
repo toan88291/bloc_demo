@@ -21,7 +21,7 @@ class _AuthorizationStatePageState extends State<AuthorizationStatePage> {
           developer.log('build state: $state', name: TAG);
           if (state is Authorized) {
             return AuthorizedNavigation();
-          } {
+          } else {
             return AuthorizationNavigation();
           }
         },

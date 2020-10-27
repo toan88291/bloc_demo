@@ -10,25 +10,25 @@ class ThemeOptionWidget extends StatelessWidget {
 
       },
       builder: (context,state) {
+        bool isLightTheme = state.isLightTheme;
         return Padding(
           padding: const EdgeInsets.only(left: 16.0),
           child: Row(
             children: [
-              Icon(Icons.color_lens,color: Colors.grey[600],),
-              const SizedBox(width: 16,),
+              Icon(Icons.color_lens,color: Colors.grey[300],),
+              const SizedBox(width: 12,),
               SizedBox(
-                width: 80,
+                width: 100,
                 child: Switch(
-                  value: state.isLightTheme,
+                  value: isLightTheme,
                   onChanged: (value){
-                    context.bloc<ThemeBloc>().changeTheme(!state.isLightTheme);
+                    context.bloc<ThemeBloc>().changeTheme(!value);
                   },
                   activeTrackColor: Colors.lightGreenAccent,
                   activeColor: Colors.green,
                 ),
               ),
             ],
-
           ),
         );
       },

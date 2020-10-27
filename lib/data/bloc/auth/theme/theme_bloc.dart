@@ -11,13 +11,13 @@ class ThemeBloc extends Cubit<ThemeState>{
   ThemeBloc(state) : super(state);
 
   Future changeTheme(bool isThemeLight) async {
+    print('changeTheme');
     if (isThemeLight) {
       AppSession().prefs.setBool(PreferenceKey.isThemeLight, true);
-      emit(ThemeLight());
-    } else {
-      AppSession().prefs.setBool(PreferenceKey.isThemeLight, true);
       emit(ThemeDark());
+    } else {
+      AppSession().prefs.setBool(PreferenceKey.isThemeLight, false);
+      emit(ThemeLight());
     }
-
   }
 }
